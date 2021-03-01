@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import {store} from "./Redux_Assets/Store/store.js";
+import redux from "redux";
+import {Provider} from "react-redux";
+import VisualizerCore from "./Views/VisualizerCore";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Provider store={store}>
+      <div style={{
+        backgroundColor: "#282c34",
+        minHeight: "100vh",
+        height: "100%",
+        color: "white"
+      }}>
+          <VisualizerCore></VisualizerCore>
+      </div>
+  </Provider>
   );
 }
 

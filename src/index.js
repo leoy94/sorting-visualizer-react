@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// core styles
+import "assets/scss/argon-dashboard-pro-react.scss?v1.2.0";
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
