@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74d85b5c-40b6-4be1-8f40-65cefe37f7f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/ArrayOptions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Visualizer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/VisualizerOptions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Helpers/AnimationHelper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Helpers/Events.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Helpers/randomArrayGenerator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux_Assets/Actions/actionTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux_Assets/Reducer/reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux_Assets/Store/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux_Assets/Store/storeFactory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/VisualizerCore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/variables/charts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/variables/general.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="74d85b5c-40b6-4be1-8f40-65cefe37f7f4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614298798079</updated>
       <workItem from="1614298802649" duration="11210000" />
-      <workItem from="1614528874859" duration="16539000" />
+      <workItem from="1614528874859" duration="17046000" />
     </task>
     <servers />
   </component>
