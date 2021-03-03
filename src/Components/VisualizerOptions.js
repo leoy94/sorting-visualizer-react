@@ -26,10 +26,10 @@ let VisualizerOptions = (props) => {
     React.useEffect(() => {
         try {
             Slider.create(slider1Ref.current, {
-                start: [1],
+                start: [.01],
                 connect: [true, false],
-                step: 1,
-                range: { min: 1, max: 1000 },
+                step: .01,
+                range: { min: .01, max: 100 },
             }).on("update", function (values, handle) {
                 setSlider1Value(values[0]);
             });
