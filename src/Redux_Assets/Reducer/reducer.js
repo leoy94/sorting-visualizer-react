@@ -15,8 +15,10 @@ export const reducer = (state = storeFactory(), action) => {
                 draftState.array.sortedArray = solution;
                 draftState.array.currentFocus = [0, draftState.array.unsortedArray.length-1];
                 draftState.animations.frames = frames;
+                draftState.array.splitEnds = [];
                 draftState.animations.currentAnimation = 0;
                 draftState.settings.isPaused = true;
+                draftState.array.selected = [];
             });
         case "play":
             return produce(state, draftState => {
@@ -33,12 +35,20 @@ export const reducer = (state = storeFactory(), action) => {
                 draftState.settings.isPaused = true
                 draftState.array.sortedArray = draftState.array.unsortedArray
                 draftState.array.currentArray = draftState.array.unsortedArray
-
                 const {sortedArray: solution, animations: frames} = mergeSortHelper(draftState.array.unsortedArray);
                 draftState.array.sortedArray = solution;
                 draftState.animations.frames = frames;
                 draftState.animations.currentAnimation = 0;
+                draftState.array.currentFocus = [0, draftState.array.unsortedArray.length-1];
+                draftState.array.splitEnds = [];
+                draftState.array.selected = [];
             });
+        case "resetFrames":
+            return produce(state, draftState => {
+            draftState.animations.currentAnimation = 0;
+            draftState.settings.isPaused = true;
+        });
+
         case "processNextFrame":
             return produce(state, draftState => {
                     try {
@@ -56,6 +66,15 @@ export const reducer = (state = storeFactory(), action) => {
                                     draftState.array.currentArray = newArray;
                                 }
                                 break;
+                            case "split":
+                                draftState.array.splitEnds.push(draftState.animations.frames[draftState.animations.currentAnimation].end)
+                                break;
+                            case "merge":
+                                draftState.array.splitEnds = draftState.array.splitEnds.filter((item) => { return ((item < draftState.animations.frames[draftState.animations.currentAnimation].start) || (item >= draftState.animations.frames[draftState.animations.currentAnimation].end))});
+                                break;
+                            case "select":
+                                draftState.array.selected = [draftState.animations.frames[draftState.animations.currentAnimation].index1, draftState.animations.frames[draftState.animations.currentAnimation].index2];
+
                         }
                     } catch (e) {}
                     draftState.animations.currentAnimation = draftState.animations.currentAnimation + 1;

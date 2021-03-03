@@ -11,30 +11,15 @@ import {
     UncontrolledTooltip, CardHeader, Form,
 } from "reactstrap";
 
-import Chart from "chart.js";
-// react plugin used to create charts
-import { Line, Bar, Doughnut, Pie } from "react-chartjs-2";
-
-import Slider from "nouislider";
-
-import {
-    chartOptions,
-    parseOptions,
-    chartExample2,
-    chartExample3,
-    chartExample4,
-    chartExample5,
-    chartExample6,
-    chartExample7,
-} from "../variables/charts.js";
-
 
 let Visualizer = (props) => {
+    let backgroundColor="";
+
     return (
         <Card style={{height: "100%", marginBottom: "0"}}>
             <CardHeader style={{backgroundColor: ""}}>
                 {/*<h6 className="surtitle"></h6>*/}
-                <h5 className="h3 mb-0">Visualizer</h5>
+                <h5 className="h3 mb-0">Mergesort Visualizer</h5>
             </CardHeader>
             <CardBody>
             {/*    default: "#172b4d",
@@ -46,30 +31,48 @@ let Visualizer = (props) => {
                     warning: "#fb6340",*/}
                     <div style={{
                         display: "flex",
-                        justifyContent: "space-between",
+                        justifyContent: "center",
                         alignItems: "flex-end",
                         maxWidth: "100%",
-                        margin: "0"
+                        margin: "0",
+                        height: "100%"
                     }}>
                                 {
                                     props.array.currentArray.map((item, index) =>{
-                                            let backgroundColor = props.array.currentFocus[0] <= index && index <= props.array.currentFocus[1]? "#5e72e4": "lightgrey";
+                                            if (JSON.stringify(props.array.currentArray)==JSON.stringify( props.array.sortedArray)) {
+                                                console.log("Hello");
+                                                backgroundColor = "#2dce89";
+                                            }
+                                            else {
+                                                backgroundColor = props.array.currentFocus[0] <= index && index <= props.array.currentFocus[1]? "#5e72e4": "lightgrey";
+                                                backgroundColor = props.array.selected.some((item) => index === item)? "#fb6340": backgroundColor;
+                                            }
                                             console.log(backgroundColor);
+
+                                            let isSplit = false;
+                                            if(props.array.splitEnds){
+                                                isSplit = props.array.splitEnds.includes(index)?true:false;
+                                            }
+
+                                            // let marginRight = isSplit ? "15px":"1px";
+                                            let divider = isSplit? <div style={{width: "5px", height: "100%", backgroundColor: "red", margin: "0 10px"}}></div>: "";
                                             return (
-                                            <div key={index}
-                                                     style={{margin: "0 .5px", width: "100%", display: "flex", flexDirection: "column", justifyContent: "center"}}>
-                                                <div style={{
+                                                <React.Fragment>
+                                            <div key={index} style={{
                                                     backgroundColor: `${backgroundColor}`,
-                                                    height: `${item*10}px`,
-                                                    width: "100%",
+                                                    height: `${item/4}px`,
+                                                    width: `${props.array.currentArray.length*.50}%`,
+                                                    marginRight: "1px",
                                                     minWidth: ".1px",
                                                     borderTopRightRadius: "5px",
                                                     borderTopLeftRadius: "5px",
                                                 }}>
-                                                </div>
-                                            </div>
 
-                                        );
+                                            </div>
+                                                {divider}
+                                            </React.Fragment>
+
+                                      );
                                     }
                                     )}
                     </div>

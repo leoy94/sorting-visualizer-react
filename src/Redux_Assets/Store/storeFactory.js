@@ -6,6 +6,7 @@ export const storeFactory = (array) => {
             currentArray: [],
             splitEnds: [],
             currentFocus: [],
+            selected: [],
         },
         animations: {
             frames: [],

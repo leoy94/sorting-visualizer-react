@@ -32,7 +32,7 @@ let ArrayOptions = (props) => {
     }, []);
 
     return (
-        <Card style={{maxHeight: "800px", height: "100%"}}>
+        <Card style={{maxHeight: "800px", height: "100%"    }}>
             <CardHeader style={{backgroundColor: ""}}>
                 {/*<h6 className="surtitle">Sorting Visualizer</h6>*/}
                 <h5 className="h3 mb-0">Array Options</h5>

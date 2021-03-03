@@ -5,7 +5,7 @@ export default function handleGenerateRandArr(size){
     while(current < size){
         let number = 0;
         while(number < 1){
-            number = Math.floor(Math.random() * 10);
+            number = Math.floor(Math.random() * 1000);
         }
         arr.push(number);
         current++;
